@@ -62,7 +62,7 @@ The training dataset was divided into training and validation sets using an 80:2
 ## 3. GitHub Repository Link
 
 **Repository:**  
-[To be updated after GitHub repository creation]
+https://github.com/sushant-khandebharad-personal/ML_Assignment_2_Aug2026/tree/main
 
 ---
 
