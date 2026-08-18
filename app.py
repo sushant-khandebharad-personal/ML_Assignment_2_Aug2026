@@ -1,6 +1,13 @@
 import pandas as pd
 import streamlit as st
 
+from model.logistic_regression_model import create_model as create_logistic_regression
+from model.decision_tree_model import create_model as create_decision_tree
+from model.knn_model import create_model as create_knn
+from model.naive_bayes_model import create_model as create_naive_bayes
+from model.random_forest_model import create_model as create_random_forest
+
+
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
@@ -125,31 +132,21 @@ def create_preprocessor():
 def create_model(model_name):
 
     if model_name == "Logistic Regression":
-        return LogisticRegression(
-            max_iter=1000,
-            random_state=42
-        )
+        return create_logistic_regression()
 
     if model_name == "Decision Tree":
-        return DecisionTreeClassifier(
-            random_state=42
-        )
+        return create_decision_tree()
 
     if model_name == "KNN":
-        return KNeighborsClassifier(
-            n_neighbors=5
-        )
+        return create_knn()
 
     if model_name == "Naive Bayes":
-        return GaussianNB()
+        return create_naive_bayes()
 
     if model_name == "Random Forest":
-        return RandomForestClassifier(
-            n_estimators=100,
-            random_state=42,
-            n_jobs=-1
-        )
+        return create_random_forest()
 
+    raise ValueError(f"Unknown model: {model_name}")
 
 # ============================================================
 # Train model and predict
