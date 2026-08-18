@@ -89,13 +89,16 @@ The following evaluation metrics were calculated for every model:
 
 ### Model Comparison
 
-| ML Model | Accuracy | AUC | Precision | Recall | F1 | MCC |
-|---|---:|---:|---:|---:|---:|---:|
-| Logistic Regression | 0.8558 | 0.9078 | 0.7406 | 0.6173 | 0.6734 | 0.5858 |
-| Decision Tree | 0.8142 | 0.7537 | 0.6091 | 0.6371 | 0.6228 | 0.4999 |
-| KNN | 0.8366 | 0.8679 | 0.6775 | 0.6135 | 0.6439 | 0.5394 |
-| Naive Bayes | 0.5382 | 0.7495 | 0.3374 | 0.9528 | 0.4983 | 0.3294 |
-| Random Forest | 0.8558 | 0.9065 | 0.7342 | 0.6288 | 0.6774 | 0.5882 |
+
+| ML Model            |   Accuracy |    AUC | Precision | Recall |         F1 |        MCC |
+| ------------------- | ---------: | -----: | --------: | -----: | ---------: | ---------: |
+| Logistic Regression |     0.8558 | 0.9078 |    0.7406 | 0.6173 |     0.6734 |     0.5858 |
+| Decision Tree       |     0.8104 | 0.7525 |    0.5993 | 0.6409 |     0.6194 |     0.4938 |
+| KNN                 |     0.8366 | 0.8679 |    0.6775 | 0.6135 |     0.6439 |     0.5394 |
+| Naive Bayes         |     0.5382 | 0.7495 |    0.3374 | 0.9528 |     0.4983 |     0.3294 |
+| Random Forest       | **0.8575** | 0.9068 |    0.7356 | 0.6371 | **0.6828** | **0.5941** |
+
+> **Note:** The model comparison metrics above are calculated on the 20% validation set from the 32,561 training instances. The Streamlit application separately evaluates the uploaded 500-row `test_data.csv`, so its displayed metrics may differ from the validation results above.
 
 ---
 
@@ -105,13 +108,15 @@ The following evaluation metrics were calculated for every model:
 
 Logistic Regression performed very well, achieving 85.58% accuracy and the highest AUC of 90.78%. It also achieved the highest precision among the five models. Its recall was slightly lower than Decision Tree and Random Forest, but its overall performance was strong and balanced.
 
+
 ### Decision Tree
 
-Decision Tree achieved 81.42% accuracy and an AUC of 75.37%, which were lower than Logistic Regression, KNN and Random Forest. However, it achieved a recall of 63.71%, which was higher than Logistic Regression and KNN. Its F1 score and MCC were lower than those of Logistic Regression and Random Forest.
+Decision Tree achieved 81.04% accuracy and an AUC of 75.25%, which were lower than Logistic Regression, KNN and Random Forest. However, it achieved a recall of 64.09%, which was higher than Logistic Regression and KNN. Its F1 score and MCC were lower than those of Logistic Regression and Random Forest.
 
 ### KNN
 
 KNN achieved 83.66% accuracy and 86.79% AUC. Its performance was better than Decision Tree and Naive Bayes on most metrics, but lower than Logistic Regression and Random Forest. Its F1 score was 64.39% and MCC was 0.5394.
+
 
 ### Naive Bayes
 
@@ -119,14 +124,14 @@ Naive Bayes achieved a very high recall of 95.28%, meaning that it identified mo
 
 ### Random Forest
 
-Random Forest achieved 85.58% accuracy, matching Logistic Regression. It achieved the highest F1 score of 67.74% and the highest MCC of 0.5882. Its AUC of 90.65% was also very strong. Overall, Random Forest provided the best balance across the evaluated metrics.
+Random Forest achieved the highest accuracy of 85.75% and the highest F1 score of 68.28% and MCC of 0.5941. Its AUC of 90.68% was also very strong. Overall, Random Forest provided the best balance across the evaluated metrics.
 
 
 ### Overall Winner
 
 **Random Forest** is selected as the overall winner.
 
-Random Forest achieved the highest F1 score (0.6774) and MCC (0.5882), while matching Logistic Regression for the highest accuracy (0.8558). Logistic Regression achieved slightly higher AUC (0.9078) and precision (0.7406), but Random Forest provided the strongest overall balance across the evaluation metrics.
+Random Forest achieved the highest accuracy (0.8575), F1 score (0.6828) and MCC (0.5941). Logistic Regression achieved the highest AUC (0.9078) and precision (0.7406), but Random Forest provided the strongest overall balance across the evaluated metrics.
 
 ---
 
