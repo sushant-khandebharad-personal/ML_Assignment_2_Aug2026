@@ -17,13 +17,15 @@ The dataset contains demographic and employment-related information used to pred
 ### Dataset characteristics
 
 - Training instances: 32,561
-- Official test instances: 16,281
+- Official Adult test instances: 16,281
+- Assignment test CSV: 500 rows
 - Input features: 14
 - Target variable: `income`
 - Classification type: Binary classification
 - Target classes:
   - `<=50K`
   - `>50K`
+
 
 ### Features
 
@@ -62,7 +64,7 @@ The training dataset was divided into training and validation sets using an 80:2
 ## 3. GitHub Repository Link
 
 **Repository:**  
-https://github.com/sushant-khandebharad-personal/ML_Assignment_2_Aug2026/tree/main
+https://github.com/sushant-khandebharad-personal/ML_Assignment_2_Aug2026
 
 ---
 
@@ -119,11 +121,12 @@ Naive Bayes achieved a very high recall of 95.28%, meaning that it identified mo
 
 Random Forest achieved 85.58% accuracy, matching Logistic Regression. It achieved the highest F1 score of 67.74% and the highest MCC of 0.5882. Its AUC of 90.65% was also very strong. Overall, Random Forest provided the best balance across the evaluated metrics.
 
+
 ### Overall Winner
 
 **Random Forest** is selected as the overall winner.
 
-It achieved the highest F1 score and MCC while matching Logistic Regression's highest accuracy. Logistic Regression achieved slightly higher AUC and precision, but Random Forest provided the strongest overall balance across the evaluation metrics.
+Random Forest achieved the highest F1 score (0.6774) and MCC (0.5882), while matching Logistic Regression for the highest accuracy (0.8558). Logistic Regression achieved slightly higher AUC (0.9078) and precision (0.7406), but Random Forest provided the strongest overall balance across the evaluation metrics.
 
 ---
 
@@ -143,5 +146,13 @@ The application is designed to evaluate uploaded test data using the selected cl
 
 Create and activate the Python virtual environment and install dependencies:
 
-```bash
-pip install -r requirements.txt
+  pip install -r requirements.txt
+  
+  streamlit run app.py
+
+  http://localhost:8501
+
+
+### Live Streamlit Application
+
+    https://mlassignment2aug2026-ydliajpljrztue28rnmjog.streamlit.app/
